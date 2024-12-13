@@ -48,6 +48,8 @@ const Navbar = () => {
                 <Link
                 key={link.id}
                 href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+
                 className={`${
                   pathname === `${link.href}` ? 'bg-black' : ''
                 } text-white block rounded-md px-3 py-2 text-base font-medium`}
