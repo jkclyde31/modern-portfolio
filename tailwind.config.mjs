@@ -7,10 +7,16 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        Onest:["Onest"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'hero-pattern': "url('/banner-bg.jpg')",
+      }
     },
   },
   plugins: [],

@@ -5,15 +5,15 @@ import { usePathname } from 'next/navigation';
 const NavigationMenu = ({navLinks}) => {
     const pathname = usePathname();
   return (
-         <div className='hidden md:ml-6 md:block '>
-                  <div className='flex space-x-2'>
+         <div className='hidden md:ml-6 md:flex items-center font-Onest '>
+                  <div className='flex  b'>
                     {navLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
                         className={`${
-                          pathname === link.href ? 'bg-black' : ''
-                        } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                          pathname === link.href ? '' : ''
+                        } text-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                       >
                         {link.name}
                       </Link>

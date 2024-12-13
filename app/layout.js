@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "../components/Footer";
 import { SiteInfoProvider } from "@/components/SiteInfoProvider";
+import Header from "@/components/Header";
 // import AuthProvider from "@/components/AuthProvider";
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`antialiased`}>
         <SiteInfoProvider>
-          <Navbar/>
+          <Header/>
           {children}
           <Footer/>
         </SiteInfoProvider>
