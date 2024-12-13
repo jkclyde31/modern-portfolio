@@ -115,7 +115,7 @@ const Navbar = () => {
               animate="visible"
               exit="hidden"
               variants={mobileMenuVariants}
-              className='md:hidden fixed inset-x-0 top-[80px] bg-blue-700 z-[70] shadow-lg'
+              className='md:hidden fixed inset-x-0 top-[65px] bg-blue-700 z-[70] shadow-lg'
             >
               <div className='space-y-1 px-2 pb-3 pt-2'>
                 {navLinks.map((link) => (
