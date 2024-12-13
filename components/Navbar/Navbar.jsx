@@ -80,7 +80,7 @@ const Navbar = () => {
         {/* ROW */}
         <div className='mx-auto max-w-[1720px] px-2 sm:px-6 lg:px-8'>
           {/* FLEX BOX */}
-          <div className='relative flex h-20 items-center'>
+          <div className='relative flex  h-16 md:h-20 items-center'>
             <MenuDropDown 
               setIsMobileMenuOpen={toggleMobileMenu} 
               isMobileMenuOpen={isMobileMenuOpen}
