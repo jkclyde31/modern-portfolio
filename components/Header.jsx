@@ -14,7 +14,7 @@ const Header = ({children}) => {
           Joedy is a versatile designer & developer based in the Indonesia, dedicated to crafting innovative and visually appealing digital experiences.
           </p>
           <Button text="Lets Work Together" width="195px" />
-          <ExpertiseButtons  className="pt-[20px] pb-[235px]"/>
+          <ExpertiseButtons  className="pt-[40px] pb-[215px]"/>
 
         </div>
     </div>
