@@ -1,9 +1,14 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { siteInfo } from '@/config/siteInfo';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -12,9 +17,122 @@ const ContactForm = () => {
     message: ''
   });
 
+  // Refs for animations
+  const headerRef = useRef(null);
+  const imageRef = useRef(null);
+  const contactInfoRef = useRef(null);
+  const formRef = useRef(null);
+  const inputRefs = useRef([]);
+
+  useEffect(() => {
+    // Header animation
+    gsap.fromTo(headerRef.current.children,
+      {
+        opacity: 0,
+        y: -20
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Image animation
+    gsap.fromTo(imageRef.current,
+      {
+        opacity: 0,
+        x: -50
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Contact info boxes animation
+    gsap.fromTo(contactInfoRef.current.children,
+      {
+        opacity: 0,
+        x: -30
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: contactInfoRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Form container animation
+    gsap.fromTo(formRef.current,
+      {
+        opacity: 0,
+        x: 50
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: formRef.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Input fields animation on focus
+    inputRefs.current.forEach(input => {
+      if (input) {
+        input.addEventListener('focus', () => {
+          gsap.to(input, {
+            scale: 1.02,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        input.addEventListener('blur', () => {
+          gsap.to(input, {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      }
+    });
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+
+    // Animation for form submission
+    gsap.to(formRef.current, {
+      scale: 1.02,
+      duration: 0.2,
+      yoyo: true,
+      repeat: 1,
+      ease: 'power2.inOut'
+    });
   };
 
   const handleChange = (e) => {
@@ -27,7 +145,7 @@ const ContactForm = () => {
   return (
     <div className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div className="max-w-[1320px] mx-auto px-4">
-        <div className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12">
           <h2 className="text-3xl font-semibold mb-2">Get in Touch</h2>
           <p className="text-primary/80 mb-8 max-w-[680px] mx-auto">
             Have a project in mind or want to stay updated? Let's connect and bring your ideas to life!
@@ -37,7 +155,7 @@ const ContactForm = () => {
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Left side - Contact Info and Image */}
           <div className="space-y-8">
-            <div className="relative">
+            <div ref={imageRef} className="relative">
               <img 
                 src="/ctc.jpg" 
                 alt="Contact" 
@@ -46,7 +164,7 @@ const ContactForm = () => {
               <div className="absolute inset-0 bg-primary/10 rounded-2xl"></div>
             </div>
 
-            <div className="space-y-6 p-6 bg-gray-50 rounded-xl">
+            <div ref={contactInfoRef} className="space-y-6 p-6 bg-gray-50 rounded-xl">
               <div className="flex items-center space-x-4">
                 <div className="p-3 bg-primary/10 rounded-full">
                   <Mail className="w-6 h-6 text-primary" />
@@ -70,13 +188,14 @@ const ContactForm = () => {
           </div>
 
           {/* Right side - Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+          <div ref={formRef} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-primary font-medium">
                   Name
                 </label>
                 <input
+                  ref={el => inputRefs.current[0] = el}
                   type="text"
                   id="name"
                   name="name"
@@ -92,6 +211,7 @@ const ContactForm = () => {
                   Email
                 </label>
                 <input
+                  ref={el => inputRefs.current[1] = el}
                   type="email"
                   id="email"
                   name="email"
@@ -107,6 +227,7 @@ const ContactForm = () => {
                   Message
                 </label>
                 <textarea
+                  ref={el => inputRefs.current[2] = el}
                   id="message"
                   name="message"
                   value={formData.message}
