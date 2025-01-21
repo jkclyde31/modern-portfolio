@@ -1,26 +1,21 @@
-import Link from "next/link"
-import { usePathname } from 'next/navigation';
-
-
-const NavigationMenu = ({navLinks}) => {
-    const pathname = usePathname();
+const NavigationMenu = ({ navLinks, activeSection }) => {
   return (
-         <div className='hidden md:ml-6 md:flex items-center font-Onest '>
-                  <div className='flex  b'>
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={`${
-                          pathname === link.href ? '' : ''
-                        } text-secondary hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-  )
-}
+    <div className="hidden md:ml-6 md:block">
+      <div className="flex space-x-4">
+        {navLinks.map((link) => (
+          <a
+            key={link.id}
+            href={link.href}
+            className={`${
+              activeSection === link.href ? 'bg-primary text-white' : 'text-[#5A6D75]'
+            } px-3 py-2 rounded-md text-[15px] font-medium hover:bg-primary/10 transition-colors duration-300`}
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-export default NavigationMenu
+export default NavigationMenu;

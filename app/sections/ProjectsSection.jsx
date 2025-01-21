@@ -166,6 +166,12 @@ const CreativeProjects = () => {
 
   const projects = [
     {
+      title: 'Task Manager',
+      tags: ['Wordpress', 'Elementor'],
+      link: 'https://wordpress-897818-5084474.cloudwaysapps.com/',
+      category: 'WordPress'
+    },
+    {
       title: 'Fame Agency',
       tags: ['NextJS', 'Tailwind CSS'],
       link: 'https://td-fameagency.vercel.app/',
@@ -242,7 +248,9 @@ const CreativeProjects = () => {
       tags: ['NextJS', 'Tailwind CSS'],
       link: 'https://cly-task-manager.vercel.app/',
       category: 'NextJS'
-    }
+    },
+
+   
   ];
 
   const tabs = ['WordPress', 'NextJS', 'Vanilla', 'GHL'];
@@ -257,11 +265,11 @@ const CreativeProjects = () => {
   };
 
   return (
-    <section className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
+    <section id="portfolio" className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div ref={headerRef} className="text-center mb-12">
         <h2 className="text-3xl font-semibold mb-2">My Creative Projects</h2>
         <p className="text-gray-600">
-          Explore my portfolio and see how I bring ideas to life
+          Explore my portfolio
         </p>
       </div>
 

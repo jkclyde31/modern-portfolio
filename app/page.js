@@ -3,7 +3,7 @@ import CreativeProjects from "./sections/ProjectsSection";
 import ContactForm from "./sections/ContactSection";
 
 export const metadata = {
-  title: "Homepage"
+  title: "My Portfolio",
 }
 
 export default function Home() {

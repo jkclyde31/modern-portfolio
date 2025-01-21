@@ -3,29 +3,82 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-
-import bgBanner from '@/public/banner-bg.jpg';
-
 import MenuDropDown from './MenuDropDown';
-import NavLogo from './NavLogo';
 import NavigationMenu from './NavigationMenu';
 import SocialLinks from './SocialLinks';
 import { navLinks } from './navLinks';
-import Button from '../Button';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
 
   useEffect(() => {
-    // Prevent body scroll when mobile menu is open
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPosition = window.scrollY + 50; // Offset for header
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(`#${sectionId}`);
+        }
+      });
+    };
+
+    // Smooth scroll handler
+    const handleNavClick = (e) => {
+      const isNavLink = e.target.getAttribute('href')?.startsWith('#');
+      
+      if (isNavLink) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          const navHeight = 100; // Extra offset for the navbar
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          setActiveSection(targetId);
+          setIsMobileMenuOpen(false);
+        }
+      }
+    };
+
+    // Add click event listener to all navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+      link.addEventListener('click', handleNavClick);
+    });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup
+    return () => {
+      navLinks.forEach(link => {
+        link.removeEventListener('click', handleNavClick);
+      });
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
 
-    // Close mobile menu if the viewport size is changed
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsMobileMenuOpen(false);
@@ -79,39 +132,34 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='fixed top-0 left-0 right-0 z-50  '>
-        {/* ROW */}
-        <div className='mx-auto max-w-[600px]   lg:px-8 pt-0 md:pt-[20px]'>
-          {/* FLEX BOX */}
-          <div className='relative flex  items-center py-[20px]  md:py-3 px-15 bg-white md:rounded-[100px]'>
+      <nav className='fixed top-0 left-0 right-0 z-50'>
+        <div className='mx-auto max-w-[600px] lg:px-8 pt-0 md:pt-[20px]'>
+          <div className='relative flex items-center py-[20px] md:py-3 px-15 bg-white md:rounded-[100px] shadow-md md:shadow-lg'>
             <MenuDropDown 
               setIsMobileMenuOpen={toggleMobileMenu} 
               isMobileMenuOpen={isMobileMenuOpen}
             />
-            {/* Logo and Nav Menu */}
-            <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-center '>
-              {/* <NavLogo/> */}
-              <NavigationMenu navLinks={navLinks}/>
+            <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-center'>
+              <NavigationMenu 
+                navLinks={navLinks} 
+                activeSection={activeSection}
+              />
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile menu with Framer Motion */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial="hidden"
               animate="visible"
               exit="hidden"
               variants={backdropVariants}
               onClick={() => setIsMobileMenuOpen(false)}
-              className='fixed inset-0  backdrop-blur-xs z-[60] md:hidden'
+              className='fixed inset-0 backdrop-blur-xs z-[60] md:hidden'
             />
-
-            {/* Mobile Menu */}
             <motion.div 
               initial="hidden"
               animate="visible"
@@ -126,10 +174,10 @@ const Navbar = () => {
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`${
-                      pathname === `${link.href}` ? 'bg-primary' : ''
+                      activeSection === link.href ? 'bg-primary' : ''
                     } ${
-                      pathname === `${link.href}` ? 'text-white' : 'text-[#5A6D75]'
-                    }   block rounded-md px-3 py-2 text-[20px] font-medium`}
+                      activeSection === link.href ? 'text-white' : 'text-[#5A6D75]'
+                    } block rounded-md px-3 py-2 text-[20px] font-medium`}
                   >
                     {link.name}
                   </Link>

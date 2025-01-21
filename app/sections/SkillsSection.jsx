@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect } from 'react';
-import { Globe, Palette, Layout, Flame, Computer, Film } from 'lucide-react';
+import { Globe, Palette, Layout, Flame, Search, Film } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -35,9 +35,9 @@ const SkillsSection = () => {
       description: 'Lazy loading, optimizing images, and improving Core Web Vitals scores.'
     },
     {
-      title: 'Database Management',
-      icon: Computer,
-      description: 'Proficient in writing optimized queries, database migrations, and implementing database security best practices.'
+      title: 'SEO Optimization',
+      icon: Search,
+      description: 'Skilled in keyword research, on-page optimization, technical SEO audits, and implementing strategies to improve search engine rankings.'
     }
   ];
 
@@ -77,7 +77,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <section className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
+    <section id="skills" className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div className="skills-header text-center mb-12">
         <p className="mb-[25px] p-[5px] rounded-[50px] bg-white max-w-[135px] mx-auto">
           Experience

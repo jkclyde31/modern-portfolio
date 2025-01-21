@@ -1,10 +1,11 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import { siteInfo } from '@/config/siteInfo';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -143,7 +144,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
+    <div id="contact" className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div className="max-w-[1320px] mx-auto px-4">
         <div ref={headerRef} className="text-center mb-12">
           <h2 className="text-3xl font-semibold mb-2">Get in Touch</h2>
@@ -165,25 +166,30 @@ const ContactForm = () => {
             </div>
 
             <div ref={contactInfoRef} className="space-y-6 p-6 bg-gray-50 rounded-xl">
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <Mail className="w-6 h-6 text-primary" />
+              <Link href={`mailto: ${siteInfo.email}`}  >
+                <div className="flex items-center space-x-4 mb-[20px]">
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <Mail className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Email</h3>
+                    <p className="text-primary/80">{siteInfo.email}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-medium">Email</h3>
-                  <p className="text-primary/80">{siteInfo.email}</p>
-                </div>
-              </div>
+              </Link>
 
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <Phone className="w-6 h-6 text-primary" />
+
+              <Link href={`tel:${siteInfo.phone}`}>
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium">Phone</h3>
+                    <p className="text-primary/80">{siteInfo.phone}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-medium">Phone</h3>
-                  <p className="text-primary/80">{siteInfo.phone}</p>
-                </div>
-              </div>
+              </Link>
             </div>
           </div>
 

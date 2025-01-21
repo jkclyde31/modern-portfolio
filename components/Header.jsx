@@ -38,7 +38,7 @@ const Header = ({ children }) => {
   }, []);
 
   return (
-    <div className="bg-hero-pattern bg-cover bg-no-repeat min-h-screen">
+    <div id="home" className="bg-hero-pattern bg-cover bg-no-repeat min-h-screen">
       <Navbar />
       <div 
         id="Banner" 

@@ -7,10 +7,12 @@ import Header from "@/components/Header";
 
 export const metadata = {
   title: {
-    template: "%s | NextJS Template",
-    default: "NextJS Template"
+    // template: "%s | My Portfolio",
+
+    template: " My Portfolio",
+    default: "My Portfolio"
   },
-  description: "NextJS Template",
+  description: "My Web Development Portfolio",
 };
 
 export default function RootLayout({ children }) {
