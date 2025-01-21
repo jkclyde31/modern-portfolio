@@ -21,7 +21,7 @@ const Footer = () => {
           </ul>
         </div> */}
         <div>
-          <p className='text-[18px] text-gray-500 mt-2 md:mt-0'>
+          <p className='text-[15px] md:text-[18px] text-gray-500 mt-2 md:mt-0'>
             {/* &copy; {currentYear} {siteInfo.company_name}. All rights reserved. */}
             All rights reserved.
 

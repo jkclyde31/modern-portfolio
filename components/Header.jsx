@@ -42,7 +42,7 @@ const Header = ({ children }) => {
       <Navbar />
       <div 
         id="Banner" 
-        className="font-Onest text-primary flex flex-col items-center justify-center min-h-screen text-center"
+        className="font-Onest text-primary flex flex-col items-center justify-center min-h-screen text-center px-5"
       >
         <h1 className="text-[45px] md:text-[75px] max-w-[1320px] text-center mx-auto md:leading-[1.2] leading-tight">
           Hey, I'm Clyde. I'm a
