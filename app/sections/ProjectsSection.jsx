@@ -200,13 +200,13 @@ const CreativeProjects = () => {
       title: 'Easy Flow',
       tags: ['HTML', 'CSS'],
       link: 'https://beta7.technodreamcenter.com/BetaStatic/easyflowdraincleaning.com/',
-      category: 'Vanilla'
+      category: 'HTML5'
     },
     {
       title: 'HCR',
       tags: ['HTML', 'CSS'],
       link: 'https://betasites.technodreamcenter.com/HCRElectricalSpecialst/',
-      category: 'Vanilla'
+      category: 'HTML5'
     },
     {
       title: 'Myo',
@@ -248,7 +248,7 @@ const CreativeProjects = () => {
       title: 'Edlin',
       tags: ['WordPress', 'Elementor'],
       link: 'https://beta7.technodreamcenter.com/BetaStatic/edlinmotorsports.com/',
-      category: 'Vanilla'
+      category: 'HTML5'
     },
     {
       title: 'Task Manager',
@@ -260,7 +260,7 @@ const CreativeProjects = () => {
    
   ];
 
-  const tabs = ['WordPress', 'NextJS', 'Vanilla', 'GHL'];
+  const tabs = ['WordPress', 'NextJS', 'HTML5', 'GHL'];
   
   const filteredProjects = projects.filter(project => project.category === activeTab);
 
