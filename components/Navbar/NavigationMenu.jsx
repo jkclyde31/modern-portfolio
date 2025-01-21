@@ -13,7 +13,7 @@ const NavigationMenu = ({navLinks}) => {
                         href={link.href}
                         className={`${
                           pathname === link.href ? '' : ''
-                        } text-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                        } text-secondary hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                       >
                         {link.name}
                       </Link>

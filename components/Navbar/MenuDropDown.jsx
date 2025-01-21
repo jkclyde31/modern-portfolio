@@ -1,6 +1,6 @@
 const MenuDropDown = ({setIsMobileMenuOpen, isMobileMenuOpen}) => {
   return (
-    <div className='absolute inset-y-0 left-0 flex items-center md:hidden '>
+    <div className='absolute inset-y-0 left-0 flex items-center md:hidden pl-2'>
         {/* <!-- Mobile menu button--> */}
         <button
         type='button'

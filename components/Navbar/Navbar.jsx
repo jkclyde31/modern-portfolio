@@ -79,20 +79,19 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='fixed top-0 left-0 right-0 z-50'>
+      <nav className='fixed top-0 left-0 right-0 z-50  '>
         {/* ROW */}
-        <div className='mx-auto max-w-[900px]  lg:px-8 pt-0 md:pt-[30px]'>
+        <div className='mx-auto max-w-[600px]   lg:px-8 pt-0 md:pt-[20px]'>
           {/* FLEX BOX */}
-          <div className='relative flex  items-center py-5 md:py-6 px-20 bg-white md:rounded-[100px]'>
+          <div className='relative flex  items-center py-[10px] md:py-3 px-15 bg-white md:rounded-[100px]'>
             <MenuDropDown 
               setIsMobileMenuOpen={toggleMobileMenu} 
               isMobileMenuOpen={isMobileMenuOpen}
             />
             {/* Logo and Nav Menu */}
-            <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-between'>
-              <NavLogo/>
+            <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-center '>
+              {/* <NavLogo/> */}
               <NavigationMenu navLinks={navLinks}/>
-              <Button text='Get Started' className={"hidden md:flex"}/>
             </div>
           </div>
         </div>
@@ -109,7 +108,7 @@ const Navbar = () => {
               exit="hidden"
               variants={backdropVariants}
               onClick={() => setIsMobileMenuOpen(false)}
-              className='fixed inset-0 bg-black/10 backdrop-blur-xs z-[60] md:hidden'
+              className='fixed inset-0  backdrop-blur-xs z-[60] md:hidden'
             />
 
             {/* Mobile Menu */}
@@ -118,7 +117,7 @@ const Navbar = () => {
               animate="visible"
               exit="hidden"
               variants={mobileMenuVariants}
-              className='md:hidden fixed inset-x-0 top-[65px] bg-white z-[70] shadow-lg'
+              className='md:hidden fixed inset-x-0 top-[52px] bg-white z-[70] shadow-lg px-2'
             >
               <div className='space-y-1 px-2 pb-3 pt-2'>
                 {navLinks.map((link) => (
@@ -130,7 +129,7 @@ const Navbar = () => {
                       pathname === `${link.href}` ? 'bg-black' : ''
                     } ${
                       pathname === `${link.href}` ? 'text-white' : 'text-[#5A6D75]'
-                    }   block rounded-md px-3 py-2 text-base font-medium`}
+                    }   block rounded-md px-3 py-2 text-[20px] font-medium`}
                   >
                     {link.name}
                   </Link>

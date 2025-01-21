@@ -1,8 +1,8 @@
 export const siteInfo = {
     // General info
-    company_name: "SiteName",
-    phone: "123-456-7890",
-    email: "site_email@gmail.com",
+    company_name: "Clyde Portfolio",
+    phone: "0993-593-378",
+    email: "aquin.randall@gmail.com",
     address: "Site Address",
     
     // Email related

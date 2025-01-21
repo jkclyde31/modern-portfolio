@@ -9,17 +9,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg:#24313a;
+  --text:#263C48;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
-    --foreground: #000000;
+    --foreground: #F5F8FA;
+    --bg: #F5F8FA;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--text);
+  background-color:var(--bg) ;
   font-family: Onest, Helvetica, sans-serif;
 }
