@@ -37,7 +37,7 @@ const SkillsSection = () => {
     {
       title: 'SEO Optimization',
       icon: Search,
-      description: 'Skilled in keyword research, on-page optimization, technical SEO audits, and implementing strategies to improve search engine rankings.'
+      description: 'On-page optimization, technical SEO audits, and implementing strategies to improve search engine rankings.'
     }
   ];
 
