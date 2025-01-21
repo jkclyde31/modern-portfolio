@@ -117,7 +117,7 @@ const Navbar = () => {
               animate="visible"
               exit="hidden"
               variants={mobileMenuVariants}
-              className='md:hidden fixed inset-x-0 top-[52px] bg-white z-[70] shadow-lg px-2'
+              className='md:hidden fixed inset-x-0 top-[40px] bg-white z-[70] shadow-lg px-2'
             >
               <div className='space-y-1 px-2 pb-3 pt-2'>
                 {navLinks.map((link) => (
@@ -126,7 +126,7 @@ const Navbar = () => {
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`${
-                      pathname === `${link.href}` ? 'bg-black' : ''
+                      pathname === `${link.href}` ? 'bg-primary' : ''
                     } ${
                       pathname === `${link.href}` ? 'text-white' : 'text-[#5A6D75]'
                     }   block rounded-md px-3 py-2 text-[20px] font-medium`}

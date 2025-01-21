@@ -163,7 +163,7 @@ const CreativeProjects = () => {
     },
     {
       title: 'Task Manager',
-      tags: ['WordPress', 'Elementor'],
+      tags: ['NextJS', 'Tailwind CSS'],
       link: 'https://cly-task-manager.vercel.app/',
       category: 'NextJS'
     }
