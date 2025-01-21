@@ -166,6 +166,12 @@ const CreativeProjects = () => {
 
   const projects = [
     {
+      title: 'Property Hive',
+      tags: ['NextJS', 'Tailwind CSS'],
+      link: 'https://property-hive-ten.vercel.app/',
+      category: 'NextJS'
+    },
+    {
       title: 'Task Manager',
       tags: ['Wordpress', 'Elementor'],
       link: 'https://wordpress-897818-5084474.cloudwaysapps.com/',
@@ -189,12 +195,7 @@ const CreativeProjects = () => {
       link: 'https://clyde-sports.netlify.app/',
       category: 'NextJS'
     },
-    {
-      title: 'Property Hive',
-      tags: ['NextJS', 'Tailwind CSS'],
-      link: 'https://property-hive-ten.vercel.app/',
-      category: 'NextJS'
-    },
+   
     {
       title: 'Easy Flow',
       tags: ['HTML', 'CSS'],

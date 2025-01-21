@@ -16,7 +16,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.scrollY + 50; // Offset for header
+      const scrollPosition = window.scrollY + 150; // Offset for header
 
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
