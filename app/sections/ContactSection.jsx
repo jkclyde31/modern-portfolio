@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Facebook, Linkedin } from 'lucide-react';
 import { siteInfo } from '@/config/siteInfo';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -179,7 +179,7 @@ const ContactForm = () => {
               </Link>
 
               <Link href={`tel:${siteInfo.phone}`}>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 mb-4 md:mb-[20px]">
                   <div className="p-3 bg-primary/10 rounded-full">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
@@ -189,6 +189,20 @@ const ContactForm = () => {
                   </div>
                 </div>
               </Link>
+
+              {/* Social Media Links */}
+              <div className="flex space-x-4">
+                <Link href={siteInfo.facebook || '#'} target="_blank" rel="noopener noreferrer">
+                  <div className="p-3 bg-primary/10 rounded-full hover:bg-primary/20 transition">
+                    <Facebook className="w-6 h-6 text-primary" />
+                  </div>
+                </Link>
+                <Link href={siteInfo.linkedin || '#'} target="_blank" rel="noopener noreferrer">
+                  <div className="p-3 bg-primary/10 rounded-full hover:bg-primary/20 transition">
+                    <Linkedin className="w-6 h-6 text-primary" />
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
 

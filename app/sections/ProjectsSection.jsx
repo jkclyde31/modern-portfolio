@@ -184,6 +184,12 @@ const CreativeProjects = () => {
       category: 'NextJS'
     },
     {
+      title: 'Clyde Sports',
+      tags: ['React', 'Tailwind CSS'],
+      link: 'https://clyde-sports.netlify.app/',
+      category: 'NextJS'
+    },
+    {
       title: 'Property Hive',
       tags: ['NextJS', 'Tailwind CSS'],
       link: 'https://property-hive-ten.vercel.app/',

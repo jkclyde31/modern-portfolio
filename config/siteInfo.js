@@ -12,10 +12,15 @@ export const siteInfo = {
     email_from_name: "Company Name",
     email_bcc: "",
     email_cc: "",
+
+    facebook: "https://www.facebook.com/cly.de.3950",
+    linkedin: "https://www.linkedin.com/in/randall-clyde-aquin-437607254/?originalSubdomain=ph",
+
+
   
     // Social media links
     social_links: {
-      facebook: "https://www.facebook.com/",
+      facebook: "https://www.facebook.com/cly.de.3950",
       twitter: "https://twitter.com/",
       tiktok: "https://tiktok.com/",
       tumblr: "https://tumblr.com",
