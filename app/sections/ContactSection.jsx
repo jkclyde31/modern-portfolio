@@ -144,8 +144,8 @@ const ContactForm = () => {
   };
 
   return (
-    <div id="contact" className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
-      <div className="max-w-[1320px] mx-auto px-4">
+    <div id="contact" className="py-10 md:py-16 w-full overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4">
         <div ref={headerRef} className="text-center mb-12">
           <h2 className="text-3xl font-semibold mb-2">Get in Touch</h2>
           <p className="text-primary/80 mb-8 max-w-[680px] mx-auto">
@@ -153,9 +153,9 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-start">
           {/* Left side - Contact Info and Image */}
-          <div className="space-y-8">
+          <div className="space-y-4 md:space-y-8">
             <div ref={imageRef} className="relative">
               <img 
                 src="/ctc.jpg" 
@@ -165,19 +165,18 @@ const ContactForm = () => {
               <div className="absolute inset-0 bg-primary/10 rounded-2xl"></div>
             </div>
 
-            <div ref={contactInfoRef} className="space-y-6 p-6 bg-gray-50 rounded-xl">
-              <Link href={`mailto: ${siteInfo.email}`}  >
-                <div className="flex items-center space-x-4 mb-[20px]">
+            <div ref={contactInfoRef} className="space-y-4 p-4 md:p-6 bg-gray-50 rounded-xl">
+              <Link href={`mailto:${siteInfo.email}`}>
+                <div className="flex items-center space-x-4 mb-4 md:mb-[20px]">
                   <div className="p-3 bg-primary/10 rounded-full">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-medium">Email</h3>
-                    <p className="text-primary/80">{siteInfo.email}</p>
+                    <p className="text-primary/80 break-all">{siteInfo.email}</p>
                   </div>
                 </div>
               </Link>
-
 
               <Link href={`tel:${siteInfo.phone}`}>
                 <div className="flex items-center space-x-4">
@@ -194,8 +193,8 @@ const ContactForm = () => {
           </div>
 
           {/* Right side - Contact Form */}
-          <div ref={formRef} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div ref={formRef} className="bg-white p-4 md:p-8 rounded-2xl shadow-lg border border-gray-100">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="block text-primary font-medium">
                   Name
