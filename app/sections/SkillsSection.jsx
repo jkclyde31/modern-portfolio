@@ -12,7 +12,7 @@ const SkillsSection = () => {
     {
       title: 'Frontend Developenment',
       icon: Palette,
-      description: 'Proficient in crafting responsive and dynamic user interfaces using React, Next.js, Wordpress,  CSS/Tailwind CSS.'
+      description: 'Knowledgeable in crafting responsive and dynamic user interfaces using React, Next.js, Wordpress,  CSS/Tailwind CSS.'
     },
     {
       title: 'Backend Developement',
@@ -22,22 +22,22 @@ const SkillsSection = () => {
     {
       title: 'DevOps and Tools',
       icon: Layout,
-      description: 'Deployment using Vercel, Netlify, or Heroku.'
+      description: 'Knowledgeable in Deployment using Vercel, Netlify, or Heroku.'
     },
     {
       title: 'Automation and Workflow',
       icon: Flame,
-      description: 'Proficiency in GoHighLevel for workflow and CRM automation'
+      description: 'Knowledgeable in GoHighLevel for workflow and CRM automation'
     },
     {
       title: 'Performance Optimization',
       icon: Film,
-      description: 'Lazy loading, optimizing images, and improving Core Web Vitals scores.'
+      description: 'Knowledgeable in Lazy loading, optimizing images, and improving Core Web Vitals scores.'
     },
     {
       title: 'SEO Optimization',
       icon: Search,
-      description: 'On-page optimization, technical SEO audits, and implementing strategies to improve search engine rankings.'
+      description: 'Knowledgeable on On-page optimization, technical SEO audits, and implementing strategies to improve search engine rankings.'
     }
   ];
 
