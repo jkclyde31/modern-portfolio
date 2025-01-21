@@ -13,7 +13,7 @@ const MenuDropDown = ({setIsMobileMenuOpen, isMobileMenuOpen}) => {
         <span className='absolute -inset-0.5'></span>
         <span className='sr-only'>Open main menu</span>
         <svg
-            className='block h-6 w-6'
+            className='block h-4 w-4'
             fill='none'
             viewBox='0 0 24 24'
             strokeWidth='1.5'

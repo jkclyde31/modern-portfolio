@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* ROW */}
         <div className='mx-auto max-w-[600px]   lg:px-8 pt-0 md:pt-[20px]'>
           {/* FLEX BOX */}
-          <div className='relative flex  items-center py-[30px]  md:py-3 px-15 bg-white md:rounded-[100px]'>
+          <div className='relative flex  items-center py-[20px]  md:py-3 px-15 bg-white md:rounded-[100px]'>
             <MenuDropDown 
               setIsMobileMenuOpen={toggleMobileMenu} 
               isMobileMenuOpen={isMobileMenuOpen}

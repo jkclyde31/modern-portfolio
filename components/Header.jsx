@@ -8,7 +8,7 @@ const Header = ({children}) => {
     <div className=" bg-hero-pattern bg-cover bg-no-repeat min-h-screen ">
         <Navbar/>
         <div id="Banner"  className="font-Onest text-primary flex flex-col items-center justify-center min-h-screen text-center">
-          <h1 className=" text-[64px] max-w-[1320px]  text-center mx-auto  leading-[1.2]">
+          <h1 className="text-[45px] leading-tight	 md:text-[64px] max-w-[1320px]  text-center mx-auto  md:leading-[1.2]">
              Hey, I’m Clyde. I'm a<span className="inline md:block"> Web Developer</span> 
           </h1>
           <p className="mx-auto text-center max-w-[680px] pt-[20px] pb-[20px]">

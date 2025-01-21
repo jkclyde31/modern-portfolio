@@ -182,7 +182,7 @@ const CreativeProjects = () => {
   };
 
   return (
-    <section className="py-16 px-4 max-w-6xl mx-auto">
+    <section className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-semibold mb-2">My Creative Projects</h2>
         <p className="text-gray-600">
@@ -190,7 +190,7 @@ const CreativeProjects = () => {
         </p>
       </div>
 
-      <div className="flex justify-center mb-8 space-x-2">
+      <div className="flex justify-center mb-8 space-x-2 flex-wrap">
         {tabs.map((tab) => (
           <button
             key={tab}

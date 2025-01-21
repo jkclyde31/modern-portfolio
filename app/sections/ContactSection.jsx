@@ -25,10 +25,10 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="py-16 px-4 max-w-6xl mx-auto">
+    <div className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div className="max-w-[1320px] mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-primary text-[48px] mb-4">Get in Touch</h2>
+          <h2 className="text-3xl font-semibold mb-2">Get in Touch</h2>
           <p className="text-primary/80 mb-8 max-w-[680px] mx-auto">
             Have a project in mind or want to stay updated? Let's connect and bring your ideas to life!
           </p>

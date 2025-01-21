@@ -35,10 +35,10 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4 max-w-6xl mx-auto">
+    <section className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-12">
         <p className='mb-[25px] p-[5px] rounded-[50px] bg-white max-w-[135px] mx-auto'>Experience</p>
-        <h2 className="text-[56px] text-[#263C48] font-medium  max-w-[905px] mx-auto">My Skills that Shine, Expertise You Can Trust</h2>
+        <h2 className="text-[35px] md:text-[56px] text-[#263C48] font-medium  max-w-[905px] mx-auto leading-tight	">My Skills that Shine, Expertise You Can Trust</h2>
         <p className="text-gray-600 max-w-[461px] mx-auto">
           Explore my expertise and see how I can leverage my skills to drive your projects forward.
         </p>
