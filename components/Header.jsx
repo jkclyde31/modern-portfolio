@@ -52,7 +52,7 @@ const Header = ({ children }) => {
           I focus on creating modern, responsive websites and web applications that deliver seamless user experiences and meet your unique needs.
         </p>
         <div className="button-wrapper">  {/* Added wrapper div */}
-          <Button text="Lets Work Together" width="195px" className="mb-5" />
+          <Button href="#contact" text="Lets Work Together" width="195px" className="mb-5" />
         </div>
         <ExpertiseButtons className="pt-5 expertise-buttons" />
       </div>
