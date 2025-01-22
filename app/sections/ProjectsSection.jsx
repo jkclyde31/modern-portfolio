@@ -1,20 +1,12 @@
 "use client"
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef , useEffect} from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Register ScrollTrigger plugin
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const ProjectCard = ({ title, tags, link, image, index }) => {
   const [isHovering, setIsHovering] = useState(false);
   const containerRef = useRef(null);
-  const cardRef = useRef(null);
   const [containerDimensions, setContainerDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
@@ -30,35 +22,12 @@ const ProjectCard = ({ title, tags, link, image, index }) => {
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
 
-  useEffect(() => {
-    const card = cardRef.current;
-    
-    gsap.fromTo(card,
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: card,
-          start: "top bottom-=100",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  }, [index]);
-
   const desktopWidth = 1920;
   const desktopHeight = 1080;
   const scale = containerDimensions.width / desktopWidth;
 
   return (
     <div 
-      ref={cardRef}
       className="bg-white rounded-xl shadow-sm overflow-hidden relative group"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -106,30 +75,8 @@ const ProjectCard = ({ title, tags, link, image, index }) => {
 };
 
 const TabContent = ({ projects }) => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    
-    gsap.fromTo(container,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: container,
-          start: "top center",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  }, [projects]);
-
   return (
-    <div 
-      ref={containerRef}
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    >
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map((project, index) => (
         <ProjectCard key={project.link} {...project} index={index} />
       ))}
@@ -140,29 +87,6 @@ const TabContent = ({ projects }) => {
 const CreativeProjects = () => {
   const [activeTab, setActiveTab] = useState('WordPress');
   const [isChanging, setIsChanging] = useState(false);
-  const headerRef = useRef(null);
-  
-  useEffect(() => {
-    const header = headerRef.current;
-    
-    gsap.fromTo(header.children,
-      {
-        opacity: 0,
-        y: -20
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: header,
-          start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  }, []);
 
   const projects = [
     {
@@ -273,7 +197,7 @@ const CreativeProjects = () => {
 
   return (
     <section id="portfolio" className="py-10 md:py-16 px-4 max-w-6xl mx-auto">
-      <div ref={headerRef} className="text-center mb-12">
+      <div className="text-center mb-12">
         <h2 className="text-3xl font-semibold mb-2">My Creative Projects</h2>
         <p className="text-gray-600">
           Explore my portfolio
