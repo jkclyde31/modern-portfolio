@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
        <SkillsSection/>
-       <CreativeProjects/>
-       <ContactForm/>
+       {/* <CreativeProjects/>
+       <ContactForm/> */}
 
     </>
    
