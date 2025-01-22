@@ -4,7 +4,7 @@ const NavigationMenu = ({ navLinks, activeSection }) => {
       <div className="flex space-x-4">
         {navLinks.map((link) => (
           <a
-            key={link.id}
+            key={link.href}  // Using href as key if id is not available
             href={link.href}
             className={`${
               activeSection === link.href ? 'bg-primary text-white' : 'text-[#5A6D75]'
