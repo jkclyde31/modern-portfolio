@@ -37,7 +37,7 @@ const SkillsSection = () => {
     }
   ];
 
-  const baseDelay = 4; 
+  const baseDelay = 1; 
   const delayIncrement = 2; 
 
   return (
