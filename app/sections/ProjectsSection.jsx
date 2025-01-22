@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Register ScrollTrigger plugin
 if (typeof window !== 'undefined') {
